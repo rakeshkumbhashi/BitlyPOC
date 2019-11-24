@@ -1,0 +1,11 @@
+For creating a new short URL for long one:
+curl -H "Content-Type: application/json"   -X POST   --data '{"longurl":"http://www.google.com"}'  http://localhost:9999/api/URLGen
+
+For Getting long URL of a short url:
+curl -G -v "http://localhost:9999/api/URLGen"  --data-urlencode  "shorturl=http://hWVHGRw" -H "Accept: application/json"
+
+For getting redirected to a short url:
+curl -G -v "http://localhost:9999/api/URLRedirect"  --data-urlencode  "shorturl=http://hWVHGRw" -H "Accept: application/json"
+
+Or best yet try redirection in a browser:
+http://localhost:9999/api/URLRedirect?shorturl=http%3A%2F%2FhWVHGRw
